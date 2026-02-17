@@ -1,26 +1,74 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FDFCF8;
+  --foreground: #121212;
+  --primary: #C5A059;
+  --primary-foreground: #FDFCF8;
+  --secondary: #1B4332;
+  --secondary-foreground: #FDFCF8;
+  --accent: #D4AF37;
+  --accent-foreground: #121212;
+  --muted: #F3F1E8;
+  --muted-foreground: #606060;
+  --border: #E5E1D3;
+  --input: #E5E1D3;
+  --ring: #C5A059;
+  --radius: 0.75rem;
+
+  --font-serif: "Playfair Display", serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  
+  --font-serif: var(--font-serif);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--border);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-feature-settings: "rlig" 1, "calt" 1;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.glass {
+  background: rgba(253, 252, 248, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(197, 160, 89, 0.1);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #C5A059 0%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-premium {
+  @apply relative overflow-hidden transition-all duration-300 ease-out;
+}
+
+.btn-premium:hover {
+  @apply scale-105 shadow-lg;
 }
