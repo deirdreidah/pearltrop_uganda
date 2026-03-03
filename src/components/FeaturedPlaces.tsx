@@ -2,43 +2,44 @@
 
 import { Star, MapPin, Heart } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const destinations = [
     {
         id: 1,
-        name: "Lake Victoria Serenity",
-        location: "Entebbe, Uganda",
-        price: "$250",
-        rating: 4.9,
-        image: "https://images.unsplash.com/photo-1549144464-9da9cd629633?q=80&w=800&auto=format&fit=crop",
-        type: "Resort"
-    },
-    {
-        id: 2,
-        name: "Bwindi Jungle Lodge",
-        location: "Bwindi, Uganda",
-        price: "$450",
-        rating: 5.0,
-        image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=800&auto=format&fit=crop",
-        type: "Lodge"
-    },
-    {
-        id: 3,
-        name: "Pearl View Apartments",
+        name: "Latitude 0° Apartments",
         location: "Kampala, Uganda",
-        price: "$120",
-        rating: 4.8,
-        image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop",
+        price: "$150",
+        rating: 4.9,
+        image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=800&auto=format&fit=crop",
         type: "Apartment"
     },
     {
-        id: 4,
-        name: "Nile River Retreat",
-        location: "Jinja, Uganda",
-        price: "$180",
+        id: 2,
+        name: "Speke Apartments Wampewo",
+        location: "Kampala, Uganda",
+        price: "$120",
         rating: 4.7,
-        image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=800&auto=format&fit=crop",
-        type: "Villas"
+        image: "https://images.unsplash.com/photo-1502672260266-1c1ec2d90687?q=80&w=800&auto=format&fit=crop",
+        type: "Apartment"
+    },
+    {
+        id: 3,
+        name: "Pineapple Bay Resort",
+        location: "Bulago Island, Lake Victoria",
+        price: "$250",
+        rating: 4.8,
+        image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=800&auto=format&fit=crop",
+        type: "Resort"
+    },
+    {
+        id: 4,
+        name: "Chobe Safari Lodge",
+        location: "Murchison Falls National Park",
+        price: "$300",
+        rating: 5.0,
+        image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop",
+        type: "Resort"
     }
 ];
 
@@ -49,12 +50,12 @@ export default function FeaturedPlaces() {
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                     <div className="max-w-2xl">
                         <span className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-4 block">Handpicked for you</span>
-                        <h2 className="text-4xl md:text-6xl font-bold leading-tight">Incredible Stays In <br />The Pearl of Africa</h2>
+                        <h2 className="text-4xl md:text-6xl font-bold leading-tight">Incredible Accommodations In <br />The Pearl of Africa</h2>
                     </div>
-                    <button className="group flex items-center space-x-2 text-primary font-bold transition-all duration-300">
+                    <Link href="/accommodations" className="group flex items-center space-x-2 text-primary font-bold transition-all duration-300">
                         <span className="border-b-2 border-primary/30 group-hover:border-primary pb-1 transition-all">View all properties</span>
                         <span className="group-hover:translate-x-1 transition-transform">→</span>
-                    </button>
+                    </Link>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">

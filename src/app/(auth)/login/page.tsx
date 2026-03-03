@@ -30,7 +30,7 @@ export default function LoginPage() {
                                 <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground w-5 h-5" />
                                 <input
                                     type="email"
-                                    placeholder="name@example.com"
+                                    placeholder="Email"
                                     className="w-full pl-12 pr-4 py-4 rounded-2xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none bg-muted/30"
                                 />
                             </div>
@@ -39,7 +39,7 @@ export default function LoginPage() {
                         <div className="space-y-2">
                             <div className="flex justify-between items-center">
                                 <label className="text-sm font-bold uppercase tracking-wider text-muted-foreground">Password</label>
-                                <button className="text-xs font-bold text-primary hover:underline">Forgot password?</button>
+                                <Link href="/forgot-password" title="Go to forgot password page" className="text-xs font-bold text-primary hover:underline">Forgot password?</Link>
                             </div>
                             <div className="relative">
                                 <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground w-5 h-5" />

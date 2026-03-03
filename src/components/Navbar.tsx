@@ -38,11 +38,9 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className={`hidden md:flex items-center space-x-10 text-sm font-bold uppercase tracking-[0.15em] ${shouldBeSolid ? "text-foreground/80" : "text-white/80"}`}>
-          <Link href="/discover" className="hover:text-primary transition-all hover:tracking-[0.2em]">Discover</Link>
-          <Link href="/stays" className="hover:text-primary transition-all hover:tracking-[0.2em]">Stays</Link>
-          <Link href="/tours" className="hover:text-primary transition-all hover:tracking-[0.2em]">Tours</Link>
+          <Link href="/accommodations" className="hover:text-primary transition-all hover:tracking-[0.2em]">Accommodations</Link>
+          <Link href="/tour-companies" className="hover:text-primary transition-all hover:tracking-[0.2em]">Tour Companies</Link>
           <Link href="/transport" className="hover:text-primary transition-all hover:tracking-[0.2em]">Transport</Link>
-          <Link href="/about" className="hover:text-primary transition-all hover:tracking-[0.2em]">About Uganda</Link>
         </div>
 
         <div className="hidden md:flex items-center space-x-6">
@@ -76,11 +74,9 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="absolute top-full left-0 right-0 bg-background border-t border-border p-6 md:hidden animate-in slide-in-from-top duration-300">
           <div className="flex flex-col space-y-4">
-            <Link href="/discover" className="text-xl font-medium" onClick={() => setIsMenuOpen(false)}>Discover</Link>
-            <Link href="/stays" className="text-xl font-medium" onClick={() => setIsMenuOpen(false)}>Stays</Link>
-            <Link href="/tours" className="text-xl font-medium" onClick={() => setIsMenuOpen(false)}>Tours</Link>
+            <Link href="/accommodations" className="text-xl font-medium" onClick={() => setIsMenuOpen(false)}>Accommodations</Link>
+            <Link href="/tour-companies" className="text-xl font-medium" onClick={() => setIsMenuOpen(false)}>Tour Companies</Link>
             <Link href="/transport" className="text-xl font-medium" onClick={() => setIsMenuOpen(false)}>Transport</Link>
-            <Link href="/about" className="text-xl font-medium" onClick={() => setIsMenuOpen(false)}>About Uganda</Link>
             <hr className="border-border" />
             <div className="grid grid-cols-2 gap-4 pt-2">
               <Link href="/login" className="flex items-center space-x-2 bg-muted text-foreground px-5 py-3 rounded-xl justify-center font-bold" onClick={() => setIsMenuOpen(false)}>

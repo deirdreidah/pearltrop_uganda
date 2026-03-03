@@ -15,7 +15,7 @@ export default function TransportSection() {
                         </div>
                         <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
                             Whether you're looking for a self-drive adventure across the savannah or a professional
-                            chauffeur for your city meetings, PearlTrop provides seamless transportation tailored to your needs.
+                            driver for your city meetings, PearlTrop provides seamless transportation tailored to your needs.
                         </p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
@@ -38,7 +38,7 @@ export default function TransportSection() {
                                 </div>
                                 <h4 className="text-xl font-bold mb-3">Professional Rides</h4>
                                 <p className="text-sm text-muted-foreground mb-6">
-                                    Airport transfers and chauffeur services with professional drivers who know every corner of Uganda.
+                                    Airport transfers and driver services with professional drivers who know every corner of Uganda.
                                 </p>
                                 <button className="text-secondary font-bold text-sm border-b border-secondary/30 pb-0.5 hover:border-secondary transition-all">
                                     Book a Ride

@@ -90,8 +90,8 @@ export default function TransportPage() {
                         {bookingType === "rent" ? (
                             <form className="space-y-6 animate-in fade-in zoom-in-95 duration-500">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <FormInput label="Full Name" placeholder="John Doe" />
-                                    <FormInput label="Email Address" placeholder="john@example.com" type="email" />
+                                    <FormInput label="Full Name" placeholder="Name" />
+                                    <FormInput label="Email Address" placeholder="Email" type="email" />
                                     <FormInput label="Pickup Location" placeholder="Entebbe Airport" />
                                     <FormInput label="Vehicle Class" type="select" options={["Economy Sedan", "Comfort SUV", "Luxury 4x4", "Safari Van"]} />
                                     <FormInput label="Pickup Date" type="date" />
@@ -104,7 +104,7 @@ export default function TransportPage() {
                         ) : (
                             <form className="space-y-6 animate-in fade-in zoom-in-95 duration-500">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <FormInput label="Full Name" placeholder="John Doe" />
+                                    <FormInput label="Full Name" placeholder="Name" />
                                     <FormInput label="Phone Number" placeholder="+256 ..." type="tel" />
                                     <FormInput label="Pickup Address" placeholder="Current Location" />
                                     <FormInput label="Destination" placeholder="Where to?" />

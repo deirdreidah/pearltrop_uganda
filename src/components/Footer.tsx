@@ -31,10 +31,9 @@ export default function Footer() {
                     <div>
                         <h4 className="text-lg font-bold mb-8 font-serif">Quick Links</h4>
                         <ul className="space-y-4 text-white/60">
-                            <li><Link href="/stays" className="hover:text-primary transition-colors">Find a Stay</Link></li>
-                            <li><Link href="/tours" className="hover:text-primary transition-colors">Book a Tour</Link></li>
+                            <li><Link href="/accommodations" className="hover:text-primary transition-colors">Accommodations</Link></li>
+                            <li><Link href="/tour-companies" className="hover:text-primary transition-colors">Tour Companies</Link></li>
                             <li><Link href="/transport" className="hover:text-primary transition-colors">Rent a Car</Link></li>
-                            <li><Link href="/discover" className="hover:text-primary transition-colors">Our Destinations</Link></li>
                             <li><Link href="/become-a-host" className="hover:text-primary transition-colors">List Your Property</Link></li>
                         </ul>
                     </div>
@@ -43,8 +42,8 @@ export default function Footer() {
                         <h4 className="text-lg font-bold mb-8 font-serif">Support</h4>
                         <ul className="space-y-4 text-white/60">
                             <li><Link href="/help" className="hover:text-primary transition-colors">Help Center</Link></li>
-                            <li><Link href="/safety" className="hover:text-primary transition-colors">Safety Information</Link></li>
-                            <li><Link href="/cancellation" className="hover:text-primary transition-colors">Cancellation Options</Link></li>
+                            <li><Link href="/help#safety" className="hover:text-primary transition-colors">Safety Information</Link></li>
+                            <li><Link href="/help#cancellation" className="hover:text-primary transition-colors">Cancellation Options</Link></li>
                             <li><Link href="/contact" className="hover:text-primary transition-colors">Contact Us</Link></li>
                         </ul>
                     </div>
