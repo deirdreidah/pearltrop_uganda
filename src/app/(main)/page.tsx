@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import FeaturedPlaces from "@/components/FeaturedPlaces";
+import TransportSection from "@/components/TransportSection";
 import { Compass, Globe, Shield, CreditCard } from "lucide-react";
 import React from "react";
 import Image from "next/image";
@@ -11,59 +12,68 @@ export default function Home() {
       <Hero />
 
       {/* Features Section */}
-      <section className="py-20 bg-muted">
+      <section className="section-padding bg-[#F9F8F3]">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div className="max-w-3xl mb-16">
+            <h2 className="text-sm uppercase tracking-[0.2em] text-primary font-bold mb-4">Why choose us</h2>
+            <h3 className="text-4xl md:text-5xl font-bold leading-tight">Elevating your Ugandan <br />travel experience</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             <FeatureCard
-              icon={<Compass className="w-8 h-8 text-primary" />}
+              icon={<Compass className="w-6 h-6 text-primary" />}
               title="Wide Discovery"
-              description="Explore thousands of curated destinations across the Pearl of Africa."
+              description="Explore thousands of curated destinations across the Pearl of Africa, from hidden gems to iconic landmarks."
             />
             <FeatureCard
-              icon={<Globe className="w-8 h-8 text-primary" />}
+              icon={<Globe className="w-6 h-6 text-primary" />}
               title="Local Expertise"
-              description="Connect with local guides and hosts for an authentic Ugandan experience."
+              description="Connect with local guides and hosts for an authentic Ugandan experience you won't find in guidebooks."
             />
             <FeatureCard
-              icon={<Shield className="w-8 h-8 text-primary" />}
+              icon={<Shield className="w-6 h-6 text-primary" />}
               title="Secure Bookings"
-              description="Your safety and security are our top priorities with verified listings."
+              description="Your safety and security are our top priorities with verified listings and secure checkout processes."
             />
             <FeatureCard
-              icon={<CreditCard className="w-8 h-8 text-primary" />}
+              icon={<CreditCard className="w-6 h-6 text-primary" />}
               title="Easy Payments"
-              description="Seamless payment options supporting both local and international methods."
+              description="Seamless payment options supporting both local mobile money and international credit cards."
             />
           </div>
         </div>
       </section>
 
       <FeaturedPlaces />
+      <TransportSection />
 
       {/* Discovery/Tours Teaser */}
-      <section className="py-24 relative overflow-hidden bg-secondary">
-        <div className="absolute top-0 right-0 w-1/2 h-full hidden lg:block">
+      <section className="py-32 relative overflow-hidden bg-secondary">
+        <div className="absolute top-0 right-0 w-1/2 h-full hidden lg:block overflow-hidden">
           <Image
             src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=1200&auto=format&fit=crop"
             alt="Gorilla trekking"
             fill
-            className="object-cover"
+            className="object-cover scale-110 hover:scale-100 transition-transform duration-[20s]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-secondary to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/40 to-transparent" />
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-2xl text-white">
-            <h2 className="text-4xl md:text-6xl font-bold mb-8">Beyond Just Stays</h2>
-            <p className="text-xl text-white/70 mb-10 leading-relaxed">
-              Uganda is more than just beautiful hotels. It's about the adventure.
-              Join our curated tours from Gorilla trekking in Bwindi to white-water rafting on the Nile.
+            <span className="inline-block px-4 py-1 mb-6 bg-white/10 backdrop-blur-md rounded-full text-[10px] font-bold uppercase tracking-[0.2em] border border-white/10">
+              Unforgettable Journeys
+            </span>
+            <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-[1.1] tracking-tight">Beyond <br />Just Stays</h2>
+            <p className="text-xl text-white/70 mb-12 leading-relaxed max-w-xl">
+              Uganda is more than just beautiful hotels—it's a symphony of adventures.
+              Join our curated tours from intimate silverback encounters in Bwindi to
+              exhilarating white-water rafting on the source of the Nile.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <button className="bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-accent transition-all">
+            <div className="flex flex-wrap gap-6">
+              <button className="bg-primary text-white px-10 py-5 rounded-full font-bold hover:bg-accent hover:scale-105 active:scale-95 transition-all shadow-xl shadow-black/20">
                 Explore Adventures
               </button>
-              <button className="border border-white/30 text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition-all">
+              <button className="bg-white/5 backdrop-blur-md border border-white/20 text-white px-10 py-5 rounded-full font-bold hover:bg-white/10 hover:scale-105 active:scale-95 transition-all">
                 Our Destinations
               </button>
             </div>
@@ -71,28 +81,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Auth/Profile Teaser */}
-      <section className="py-24 text-center">
-        <div className="container mx-auto px-6 max-w-3xl">
-          <h2 className="text-4xl font-bold mb-6">Join the PearlTrop Community</h2>
-          <p className="text-muted-foreground text-lg mb-10">
-            Create an account to save your favorite places, manage your bookings, and get personalized travel recommendations.
-          </p>
-          <div className="flex justify-center items-center space-x-4">
-            <div className="flex -space-x-4">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <div key={i} className="w-12 h-12 rounded-full border-4 border-background overflow-hidden relative">
-                  <Image src={`https://i.pravatar.cc/150?u=${i}`} alt="user" fill className="object-cover" />
-                </div>
-              ))}
-            </div>
-            <span className="text-sm font-bold text-muted-foreground">+2,000 travelers joined this month</span>
-          </div>
-          <Link href="/signup" className="mt-12 bg-secondary inline-block text-white px-12 py-4 rounded-full font-bold hover:opacity-90 transition-all text-xl">
-            Get Started for Free
-          </Link>
-        </div>
-      </section>
     </div>
   );
 }

@@ -33,6 +33,7 @@ export default function Footer() {
                         <ul className="space-y-4 text-white/60">
                             <li><Link href="/stays" className="hover:text-primary transition-colors">Find a Stay</Link></li>
                             <li><Link href="/tours" className="hover:text-primary transition-colors">Book a Tour</Link></li>
+                            <li><Link href="/transport" className="hover:text-primary transition-colors">Rent a Car</Link></li>
                             <li><Link href="/discover" className="hover:text-primary transition-colors">Our Destinations</Link></li>
                             <li><Link href="/become-a-host" className="hover:text-primary transition-colors">List Your Property</Link></li>
                         </ul>

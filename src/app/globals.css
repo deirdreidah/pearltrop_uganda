@@ -33,6 +33,13 @@
   --color-border: var(--border);
   
   --font-serif: var(--font-serif);
+
+  --animate-ken-burns: ken-burns 40s ease infinite alternate;
+  
+  @keyframes ken-burns {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.2) translate(-2%, -3%); }
+  }
 }
 
 * {
@@ -42,20 +49,21 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: var(--font-inter), sans-serif;
   font-feature-settings: "rlig" 1, "calt" 1;
   scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
+  font-family: var(--font-playfair), serif;
   font-weight: 700;
   letter-spacing: -0.02em;
 }
 
 .glass {
   background: rgba(253, 252, 248, 0.8);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(197, 160, 89, 0.1);
 }
 
@@ -66,9 +74,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-premium {
-  @apply relative overflow-hidden transition-all duration-300 ease-out;
+  @apply relative overflow-hidden transition-all duration-500 ease-out;
 }
 
 .btn-premium:hover {
-  @apply scale-105 shadow-lg;
+  @apply scale-[1.02] shadow-2xl brightness-110;
+}
+
+.section-padding {
+  @apply py-24 md:py-32;
 }

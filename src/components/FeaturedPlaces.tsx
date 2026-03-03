@@ -44,51 +44,57 @@ const destinations = [
 
 export default function FeaturedPlaces() {
     return (
-        <section className="py-24 bg-background">
+        <section className="section-padding bg-background">
             <div className="container mx-auto px-6">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-                    <div className="max-w-xl">
-                        <h2 className="text-sm uppercase tracking-widest text-primary font-bold mb-3">Handpicked for you</h2>
-                        <h3 className="text-4xl md:text-5xl font-bold">Incredible Stays In The Pearl of Africa</h3>
+                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+                    <div className="max-w-2xl">
+                        <span className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-4 block">Handpicked for you</span>
+                        <h2 className="text-4xl md:text-6xl font-bold leading-tight">Incredible Stays In <br />The Pearl of Africa</h2>
                     </div>
-                    <button className="text-primary font-bold border-b-2 border-primary pb-1 hover:text-accent hover:border-accent transition-all duration-300">
-                        View all properties
+                    <button className="group flex items-center space-x-2 text-primary font-bold transition-all duration-300">
+                        <span className="border-b-2 border-primary/30 group-hover:border-primary pb-1 transition-all">View all properties</span>
+                        <span className="group-hover:translate-x-1 transition-transform">→</span>
                     </button>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                     {destinations.map((place) => (
                         <div key={place.id} className="group cursor-pointer">
-                            <div className="relative h-[400px] mb-4 overflow-hidden rounded-3xl shadow-lg">
+                            <div className="relative h-[480px] mb-6 overflow-hidden rounded-[2rem] shadow-2xl transition-transform duration-500 group-hover:-translate-y-2">
                                 <Image
                                     src={place.image}
                                     alt={place.name}
                                     fill
-                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
                                 />
-                                <button className="absolute top-4 right-4 p-3 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-red-500 transition-all duration-300">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                                <button className="absolute top-6 right-6 p-3.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white hover:bg-white hover:text-red-500 transition-all duration-300">
                                     <Heart className="w-5 h-5" />
                                 </button>
-                                <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-secondary">
-                                    {place.type}
+
+                                <div className="absolute bottom-6 left-6 right-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                    <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-4 rounded-2xl">
+                                        <div className="flex justify-between items-center mb-1">
+                                            <span className="text-[10px] uppercase tracking-widest font-black text-white/70">{place.type}</span>
+                                            <div className="flex items-center space-x-1">
+                                                <Star className="w-3 h-3 text-accent fill-accent" />
+                                                <span className="text-xs font-bold text-white">{place.rating}</span>
+                                            </div>
+                                        </div>
+                                        <h4 className="text-lg font-bold text-white truncate">{place.name}</h4>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div className="space-y-2">
-                                <div className="flex justify-between items-center">
-                                    <h4 className="text-xl font-bold group-hover:text-primary transition-colors">{place.name}</h4>
-                                    <div className="flex items-center space-x-1">
-                                        <Star className="w-4 h-4 text-accent fill-accent" />
-                                        <span className="text-sm font-bold">{place.rating}</span>
-                                    </div>
+                            <div className="space-y-3 px-2">
+                                <div className="flex items-center space-x-2 text-muted-foreground/80">
+                                    <MapPin className="w-4 h-4 text-primary" />
+                                    <span className="text-sm font-medium">{place.location}</span>
                                 </div>
-                                <div className="flex items-center space-x-1 text-muted-foreground">
-                                    <MapPin className="w-4 h-4" />
-                                    <span className="text-sm">{place.location}</span>
-                                </div>
-                                <div className="pt-2 flex items-baseline space-x-1">
-                                    <span className="text-xl font-bold text-primary">{place.price}</span>
-                                    <span className="text-sm text-muted-foreground">/ night</span>
+                                <div className="flex items-baseline space-x-2">
+                                    <span className="text-2xl font-bold text-primary">{place.price}</span>
+                                    <span className="text-sm text-muted-foreground font-medium">/ night</span>
                                 </div>
                             </div>
                         </div>
